@@ -1,37 +1,41 @@
 """
-Hi, this is my file handling program, it will finally copy files from mem card from my camera to location G Zdjęcia with folder from current year
+Hi, this is my file handling program,
+it will finally copy files from mem card from my camera to location G Zdjecia with folder from current year
 """
-import time,os
+import time, os
 from copy import *
 from read import *
+
 menu_options = {
     1: 'Read file you want --give full path to file',
     2: 'Copy files',
     3: 'Nothing',
     4: 'Exit',
 }
+
+
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
         command = 'cls'
     os.system(command)
+
+
 def print_menu():
     for key in menu_options.keys():
-        print (key, '--', menu_options[key] )
+        print(key, '--', menu_options[key])
+
 
 def sleep():
     time.sleep(3)
 
 
-
 if __name__ == '__main__':
-    while (True):
+    while True:
         print_menu()
         option = ''
         try:
-
             option = int(input('Enter your choice: '))
-
         except:
             print('Wrong input. Please enter a number ...')
             time.sleep(5)
@@ -66,5 +70,5 @@ if __name__ == '__main__':
             time.sleep(2)
             clearConsole()
 
-    #read()
-    #copy()
+    # read()
+    # copy()
